@@ -1,0 +1,20 @@
+.title{
+    display: flex;
+    justify-content: center;
+    background-image: url("./images/football-texture.jpg");
+    background-size: 100%;
+    border-end-start-radius: 25px;
+    border-end-end-radius: 25px;
+    border: 2px solid black;
+    color: white;
+    text-shadow: 5px 0px 5px black;
+    font-size: 40px;
+}
+.container{
+    display: flex;
+    border-radius: 25px;
+    /* background-image: url("./images/field.jpg"); opacity: 0.3; */
+    background-repeat:no-repeat; background-size: cover;
+    width: 100%;
+    height: 800px;
+}
