@@ -1,9 +1,23 @@
+import { Link } from 'react-router-dom';
+
 const PuppyList = (props) => {
     return (
         <div>
-            <ol>
-                <li>Placeholder</li>
-            </ol>
+            <h2>All Puppies</h2>
+
+            {
+                props.playerProps.length ? props.playerProps.map((singlePlayerElement, idx) => {
+                    return (
+                        <div>
+                            <p key={idx}>Name: {singlePlayerElement.name}</p>
+                            <Link to={`/player/${idx}`}>
+                                {singlePlayerElement.name}
+                            </Link>
+                        </div>
+                    )
+                }) : <div> No data yet...</div>    
+            }
+
         </div>
     )
 }

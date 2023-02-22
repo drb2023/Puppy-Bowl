@@ -1,8 +1,35 @@
+// 2301-FTB-MT-WEB-FT-REACT-ROUTING-PART-2 continue @ 40:00 adding a href to the name
+
+
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"; 
-import Main from "./components/Main";
+import React from 'react';
+import {useState, useEffect} from 'react';
+import PuppyList from './components/PuppyList';
+import SinglePuppy from './components/SinglePuppy';
+// import { PuppyList, SinglePuppy } from './components';
  
 const App = () => {
+
+    const [players, setPlayers] = useState([]);
+  
+    const fetchPlayersData = async () => {
+  // async function fetchPlayersData() {
+        try {
+            const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2301-FTB-MT-WEB-FT/players");
+            const translatedPlayers = await response.json();
+            console.log(translatedPlayers);
+            setPlayers(translatedPlayers.data.players);
+        }   catch (error) {
+            console.error(error);
+        }
+    };
+
+    useEffect(() => {
+        fetchPlayersData();
+    }, []);
+
+
     return(
         <BrowserRouter>
             <header>
@@ -10,16 +37,16 @@ const App = () => {
             </header>
 
             <nav className="nav">
-                {/* <Link to="/training" className="nav-box-1">Training</Link>
-                <Link to="/portfolio" className="nav-box-2">Portfolio</Link>
-                <Link to="/resume" className="nav-box-3">Resume</Link>
-                <Link to="/contact" className="nav-box-4">Contact</Link> */}
+                <Link to="/playerlist" className="nav-box-1">Player List</Link>
             </nav>
+
             <div className='container'>
                 <Routes>
-                    <Route path="/" element= {<Main />}/>
+                    <Route path="/playerlist" element= {<PuppyList playerProps={players}/>}/>
+                    <Route path="/player/:id" element= {<SinglePuppy playerProps={players}/>}/>
                 </Routes>
             </div>
+
         </BrowserRouter>
     )
 }
