@@ -14,8 +14,8 @@ const PlayerList = (props) => {
     })
 
     return (
-        <div>
-            <h2 className="champs">Puppy Players</h2>
+        <div className='ppcontainer'>
+            <h2 className="champs">Barkalotamus Team Members</h2>
 
             <input className="searchbox"
                 type="text"
@@ -25,20 +25,22 @@ const PlayerList = (props) => {
                 }}
             >
             </input>
-            
-            <section className=''>
-            {
-                filteredPlayer.length ? filteredPlayer.map((singlePlayerElement, idx) => {
-                    return (
-                        <div key={idx}>
-                            <p className='dogname'>Name: {singlePlayerElement.name}</p>
-
-                            <Link to={`/player/${idx}`}>{singlePlayerElement.name}'s Details
-                            </Link>
-                        </div>
-                    )
-                }) : <div> No player matching your request. Try Agin</div>    
-            }
+            <br/>
+            <section>
+                {
+                    filteredPlayer.length ? filteredPlayer.map((singlePlayerElement, idx) => {
+                        return (
+                            <div key={idx} className="dogname">
+                                <br/>
+                                <img src={singlePlayerElement.imageUrl} alt="Player Picture" className='pl-pic'></img>
+                                <p>Name: {singlePlayerElement.name}</p>
+                                <Link to={`/player/${idx}`}>See {singlePlayerElement.name}'s Details</Link>
+                                <br/>
+                                <br/>                             
+                            </div>
+                        )
+                    }) : <div> No player matching your request. Try Agin</div>    
+                }
             </section>
         </div>
     )

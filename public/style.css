@@ -34,12 +34,17 @@
 }
 
 .container{
-    display: flex;
+    display: flex; justify-content: center;
     padding: 20px;
     border-radius: 25px;
     box-shadow: 0px 0px 30px black;
     width: 90%;
     height: auto;
+}
+
+.ppcontainer{
+    display: flex; flex-direction: column;
+    align-items: center;
 }
 
 .home{
@@ -59,14 +64,40 @@
     justify-content: center; align-items: center;
     flex-wrap: wrap;
 }
-
-
 .pics{
-    width: 20%; height: auto;
+    width: 30%; height: auto;
     border-radius: 1em;
     margin: 10px;
 }
+.pl-pic{
+    width: 15%;
+    border-radius: 1em;
+}
+
+.dogname{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.footer{
+    display: flex;
+    justify-content: center; align-items: center;
+    background-image: url("./images/field.jpg");
+    background-size: 100%;
+    border-start-start-radius: 1.5em 1.5em;
+    border-start-end-radius: 1.5em 1.5em;
+    border: 2px solid black;
+    box-shadow: 0px 0px 30px black;
+    width: 90%;
+    margin-top: 25px;
+    padding-top: 60px;
+}
 
 .deets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; align-items: center;
     font-weight: bold;
 }

@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"; 
-import {useState, useEffect} from 'react';
+import { useState, useEffect} from 'react';
 import { Home, PlayerList, SinglePlayer } from './components';
  
 const App = () => {
@@ -31,7 +31,6 @@ const App = () => {
             </header>
 
             <nav className="nav">
-                <button><Link to="/" className="nav-box-1">Home</Link></button>
                 <button><Link to="/playerlist" className="nav-box-1">Player List</Link></button>
             </nav>
 
@@ -43,6 +42,9 @@ const App = () => {
                 </Routes>
             </div>
 
+            <footer className="footer">
+                <div className='title'></div>
+            </footer>
         </BrowserRouter>
     )
 }
