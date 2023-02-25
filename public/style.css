@@ -81,6 +81,19 @@
     font-weight: bolder;
 }
 
+.searchbox{
+    min-width: 11em;
+    background-color: rgba(64, 255, 0, 0.30);
+    
+}
+
+.deets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; align-items: center;
+    font-weight: bold;
+}
+
 .footer{
     display: flex;
     justify-content: center; align-items: center;
@@ -93,11 +106,4 @@
     width: 90%;
     margin-top: 25px;
     padding-top: 60px;
-}
-
-.deets{
-    display: flex;
-    flex-direction: column;
-    justify-content: center; align-items: center;
-    font-weight: bold;
 }

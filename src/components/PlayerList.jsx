@@ -8,7 +8,6 @@ const PlayerList = (props) => {
 
     let filteredPlayer = playerProps.filter((singlePlayerElement) => {
         let lowercasedName = singlePlayerElement.name.toLowerCase(); 
-        // console.log(lowercasedName)
 
         return lowercasedName.includes(searchQuery.toLowerCase())
     })
@@ -19,7 +18,7 @@ const PlayerList = (props) => {
 
             <input className="searchbox"
                 type="text"
-                placeholder="Search here..."
+                placeholder="Search member name..."
                 onChange={(event) => {
                         setSearchQuery(event.target.value)
                 }}
