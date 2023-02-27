@@ -12,9 +12,7 @@ const App = () => {
         try {
             const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2301-FTB-MT-WEB-FT/players");
             const translatedPlayers = await response.json();
-            console.log(translatedPlayers);
             setPlayer(translatedPlayers.data.players);
-            console.log(player)
         }   catch (error) {
             console.error(error);
         }
@@ -37,7 +35,7 @@ const App = () => {
 
             <div className="container">
                 <Routes>
-                    <Route path="/" element= {<Home playerProps={player}/>}/>
+                    <Route path="/" element= {<Home/>}/>
                     <Route path="/playerlist" element= {<PlayerList playerProps={player}/>}/>
                     <Route path="/player/:id" element= {<SinglePlayer playerProps={player}/>}/>
                 </Routes>

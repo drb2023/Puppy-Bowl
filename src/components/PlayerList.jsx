@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 const PlayerList = (props) => {
@@ -26,15 +26,16 @@ const PlayerList = (props) => {
             >
             </input>
             <br/>
+
             <section>
                 {
-                    filteredPlayer.length ? filteredPlayer.map((singlePlayerElement, idx) => {
+                    filteredPlayer.length ? filteredPlayer.map((singlePlayerElement, i) => {
                         return (
-                            <div key={idx} className="dogname">
+                            <div key={i} className="dogname">
                                 <br/>
                                 <img src={singlePlayerElement.imageUrl} alt="Player Picture" className='pl-pic'></img>
                                 <p>Name: {singlePlayerElement.name}</p>
-                                <Link to={`/player/${idx}`}>See {singlePlayerElement.name}'s Details</Link>
+                                <Link to={`/player/${singlePlayerElement.id}`}>See {singlePlayerElement.name}'s Details</Link>
                                 <br/>
                                 <br/>                             
                             </div>
@@ -45,4 +46,6 @@ const PlayerList = (props) => {
         </div>
     )
 }
+
+
 export default PlayerList;

@@ -4,8 +4,10 @@ import { useParams } from 'react-router-dom';
 const SinglePlayer = (props) => {
     const { id } = useParams();
     const { playerProps } = props;
-    const mySelectedPlayer = playerProps[id];
-
+    const selectedPlayerArray = playerProps.filter((singlePlayerElement) => {
+        return id == singlePlayerElement.id
+    })
+    const mySelectedPlayer = selectedPlayerArray[0];
     return (
         <div className='deets'>
                 <p className='champs'>Athlete Details</p>
